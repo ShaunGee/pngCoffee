@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/products.css' %}">
+
+</head>
+<body>
+
+    <div id="product_container">
+
+        {% for p in products %}
+
+            <div>
+                <h1>{{p.product_name }}</h1>
+                <h3>{{p.product_short_description }}</h3>
+                <p>{{p.product_long_description }}</p>
+                <img src= "{{ p.product_img.url }}">
+
+            </div>
+    
+        {% endfor %}
+    
+    </div>
+
+
+</body>
+</html>
